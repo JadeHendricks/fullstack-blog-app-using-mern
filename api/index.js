@@ -118,7 +118,7 @@ app.get('/profile', (req,res) => {
       if (!isAuthor) {
         return res.status(400).json('you are not the author');
       }
-      await postDoc.update({
+      await postDoc.updateOne({
         title,
         summary,
         content,
