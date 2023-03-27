@@ -1,0 +1,29 @@
+{
+  "name": "fullstack-blog-app-using-mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "nodemon index.js --prefix api",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JadeHendricks/fullstack-blog-app-using-mern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JadeHendricks/fullstack-blog-app-using-mern/issues"
+  },
+  "homepage": "https://github.com/JadeHendricks/fullstack-blog-app-using-mern#readme",
+  "devDependencies": {
+    "concurrently": "7.6.0",
+    "nodemon": "2.0.22"
+  },
+  "dependencies": {
+    "dotenv": "16.0.3"
+  }
+}
