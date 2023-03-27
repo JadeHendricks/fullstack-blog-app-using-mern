@@ -1,18 +1,25 @@
-export default function Post () {
-    return (
-        <div className="post">
-            <img src="https://techcrunch.com/wp-content/uploads/2023/01/GettyImages-1227849474.jpg?w=430&h=230&crop=1" alt="Apple acquired a startup using AI to compress videos" />
-            <div className="texts">
-                <h2>Apple acquired a startup using AI to compress videos</h2>
-                <p className="info">
-                    <a className="author">Jade Hendricks</a>
-                    <time>2023-03-27 15:58</time>
-                </p>
-                <p className="summary">
-                    Apple wouldn’t confirm the sale when asked for comment. 
-                    But WaveOne’s website was shut down around January, and several former employees, including one of WaveOne’s co-founders, now work within Apple’s various machine learning groups.
-                </p>
-            </div>
-        </div>
-    );
+import { formatISO9075 } from "date-fns";
+import { Link } from "react-router-dom";
+
+export default function Post({_id, title, summary, cover, createdAt, author}) {
+
+  return (
+    <div className="post">
+      <div className="image">
+        <Link to={`/post/${_id}`}>
+          <img src={'http://localhost:4000/'+cover} alt=""/>
+        </Link>
+      </div>
+      <div className="texts">
+        <Link to={`/post/${_id}`}>
+        <h2>{title}</h2>
+        </Link>
+        <p className="info">
+          <a className="author">{author?.username}</a>
+          <time>{formatISO9075(new Date(createdAt))}</time>
+        </p>
+        <p className="summary">{summary}</p>
+      </div>
+    </div>
+  );
 }
